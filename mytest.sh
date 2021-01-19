@@ -1,0 +1,1 @@
+./tools/dist_test.sh configs/ddsm/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py ../../experiments/mmdet_processed_data/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/latest.pth 1 --format-only --eval-options "jsonfile_prefix=./res"
