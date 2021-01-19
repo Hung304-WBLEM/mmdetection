@@ -5,9 +5,9 @@ model = dict(
 )
 
 # Dataset path
-DDSM_TRAIN_DATASET = '/home/cougarnet.uh.edu/hqvo2/Projects/Breast_Cancer/data/processed_data/mass/train'
+DDSM_TRAIN_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data/mass/train'
 DDSM_TRAIN_ANNOTATION = DDSM_TRAIN_DATASET + '/annotation_coco_with_classes.json'
-DDSM_TEST_DATASET = '/home/cougarnet.uh.edu/hqvo2/Projects/Breast_Cancer/data/processed_data/mass/test'
+DDSM_TEST_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data/mass/test'
 DDSM_TEST_ANNOTATION = DDSM_TEST_DATASET + '/annotation_coco_with_classes.json'
 
 # Modify dataset related settings
