@@ -8,14 +8,16 @@ model = dict(
         mask_head=dict(num_classes=2)))
 
 # Dataset path
-DDSM_TRAIN_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data/calc/train'
+DDSM_TRAIN_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data/calc/train_train'
 DDSM_TRAIN_ANNOTATION = DDSM_TRAIN_DATASET + '/annotation_coco_with_classes.json'
+DDSM_VAL_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data/calc/train_val'
+DDSM_VAL_ANNOTATION = DDSM_VAL_DATASET + '/annotation_coco_with_classes.json'
 DDSM_TEST_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data/calc/test'
 DDSM_TEST_ANNOTATION = DDSM_TEST_DATASET + '/annotation_coco_with_classes.json'
 
 # Modify dataset related settings
 dataset_type = 'COCODataset'
-classes = ('malignant', 'benign')
+classes = ('malignant-calc', 'benign-calc')
 data = dict(
     samples_per_gpu=4,
     workes_per_gpu=4,
@@ -24,13 +26,13 @@ data = dict(
         classes=classes,
         ann_file=DDSM_TRAIN_ANNOTATION),
     val=dict(
-        img_prefix=DDSM_TEST_DATASET,
+        img_prefix=DDSM_VAL_DATASET,
         classes=classes,
-        ann_file=DDSM_TEST_ANNOTATION),
+        ann_file=DDSM_VAL_ANNOTATION),
     test=dict(
         img_prefix=DDSM_TEST_DATASET,
         classes=classes,
         ann_file=DDSM_TEST_ANNOTATION))
-total_epochs = 24
+total_epochs = 50
 load_from = 'http://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
-work_dir = '/home/hqvo2/Projects/Breast_Cancer/experiments/mmdet_calc_data/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_ddsm'
+work_dir = '/home/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_calc/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_ddsm'
