@@ -34,18 +34,18 @@ cd /home/hqvo2/Projects/Breast_Cancer/libs/mmdetection
 
 # Train on Mass data
 bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ohem_ddsm.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.1.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.2.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.3.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_mass/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_ddsm.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_mass/retinanet_r50_nasfpn_crop640_50e_ddsm.py 8
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ohem_ddsm.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.1.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.2.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.3.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_ddsm.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/retinanet_r50_nasfpn_crop640_50e_ddsm.py 8
 
 # Train on Calcification data
 bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ohem_ddsm.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.1.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.2.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.3.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_calc/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_ddsm.py 4
-bash tools/dist_train.sh configs/cbis_ddsm_calc/retinanet_r50_nasfpn_crop640_50e_ddsm.py 8
+# bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ohem_ddsm.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.1.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.2.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_extend_bbox_0.3.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_calc/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_ddsm.py 4
+# bash tools/dist_train.sh configs/cbis_ddsm_calc/retinanet_r50_nasfpn_crop640_50e_ddsm.py 8
