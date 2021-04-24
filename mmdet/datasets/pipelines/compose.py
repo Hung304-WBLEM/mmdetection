@@ -1,7 +1,11 @@
 import collections
+import os
+import cv2
+import numpy as np
 
+from torchvision import transforms
+from matplotlib import pyplot as plt
 from mmcv.utils import build_from_cfg
-
 from ..builder import PIPELINES
 
 
@@ -40,6 +44,28 @@ class Compose(object):
             data = t(data)
             if data is None:
                 return None
+
+        ##################################
+        # Save augmented image (my code) #
+        image = data['img']._data
+        # if type(image) is list:
+        #     image = image[0]
+        # image = transforms.ToPILImage()(image)
+        # image_plot = plt.imshow(image, cmap='gray')
+        image = image.permute(1, 2, 0).numpy()
+        
+        
+        save_root = '/home/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_detection/visualize'
+        file_id = 0
+        while os.path.exists(os.path.join(save_root, f'img{file_id}.png')) is True:
+            file_id += 1
+            continue
+        # image.save(os.path.join(save_root, f'img{file_id}.png'))
+        # plt.savefig(os.path.join(save_root, f'img{file_id}.png'))
+        # plt.close()
+        cv2.imwrite(os.path.join(save_root, f'img{file_id}.png'), image)
+        ##################################
+
         return data
 
     def __repr__(self):

@@ -7,7 +7,7 @@ cd /home/hqvo2/Projects/Breast_Cancer/libs/mmdetection
 
 # Train on Mass data
 # bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py 2
-bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu.py 2
+# bash tools/dist_train.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu.py 2
 
 # Train on Calcification data
 # bash tools/dist_train.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py 2
@@ -33,9 +33,9 @@ cd /home/hqvo2/Projects/Breast_Cancer/libs/mmdetection
 # PORT=29501 ./tools/dist_test.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py \
 #     ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/best_ckpt.pth 2 \
 #     --format-only --eval-options "jsonfile_prefix=${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/test_bboxes"
-PORT=29501 ./tools/dist_test.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu.py \
-    ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/best_ckpt.pth 2 \
-    --format-only --eval-options "jsonfile_prefix=${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/test_bboxes"
+# PORT=29501 ./tools/dist_test.sh configs/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu.py \
+#     ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/best_ckpt.pth 2 \
+#     --format-only --eval-options "jsonfile_prefix=${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/test_bboxes"
 
 # Test on Calc data
 # PORT=29501 ./tools/dist_test.sh configs/cbis_ddsm_calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm.py \
@@ -53,7 +53,7 @@ calc_test_gt="/home/hqvo2/Datasets/processed_data2/calc/test/annotation_coco_wit
 
 # Plot for Mass data
 python plot_eval_curve.py -gt ${mass_test_gt} -p ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/test_bboxes.bbox.json -bb all -s ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/
-python plot_eval_curve.py -gt ${mass_test_gt} -p ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/test_bboxes.bbox.json -bb all -s ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/
+# python plot_eval_curve.py -gt ${mass_test_gt} -p ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/test_bboxes.bbox.json -bb all -s ${mass_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu/
 
 # Plot for Calc data
-python plot_eval_curve.py -gt ${calc_test_gt} -p ${calc_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/test_bboxes.bbox.json -bb all -s ${calc_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/
+# python plot_eval_curve.py -gt ${calc_test_gt} -p ${calc_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/test_bboxes.bbox.json -bb all -s ${calc_detection_root}/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/

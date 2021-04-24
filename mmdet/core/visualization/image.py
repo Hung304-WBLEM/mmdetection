@@ -6,6 +6,8 @@ import mmcv
 import numpy as np
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import Polygon
+import matplotlib
+matplotlib.use('Agg')
 
 
 def color_val_matplotlib(color):
