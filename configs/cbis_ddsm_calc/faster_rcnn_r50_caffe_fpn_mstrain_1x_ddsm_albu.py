@@ -4,22 +4,24 @@ model = dict(
     roi_head=dict(bbox_head=dict(num_classes=2))
 )
 # Dataset path
-DDSM_TRAIN_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data2/mass/train_train'
+DDSM_TRAIN_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data2/calc/train_train'
 DDSM_TRAIN_ANNOTATION = DDSM_TRAIN_DATASET + '/annotation_coco_with_classes.json'
-DDSM_VAL_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data2/mass/train_val'
+DDSM_VAL_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data2/calc/train_val'
 DDSM_VAL_ANNOTATION = DDSM_VAL_DATASET + '/annotation_coco_with_classes.json'
-DDSM_TEST_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data2/mass/test'
+DDSM_TEST_DATASET = '/home/hqvo2/Projects/Breast_Cancer/data/processed_data2/calc/test'
 DDSM_TEST_ANNOTATION = DDSM_TEST_DATASET + '/annotation_coco_with_classes.json'
 
 albu_train_transforms = [
     dict(
         type='CLAHE',
+        tile_grid_size=(32, 32),
         p=1
     )
 ]
 albu_test_transforms = [
     dict(
         type='CLAHE',
+        tile_grid_size=(32, 32),
         p=1
     )
 ]
@@ -81,7 +83,7 @@ test_pipeline = [
 
 # Modify dataset related settings
 dataset_type = 'COCODataset'
-classes = ('malignant-mass', 'benign-mass')
+classes = ('malignant-calc', 'benign-calc')
 data = dict(
     samples_per_gpu=8,
     workers_per_gpu=8,
@@ -105,5 +107,5 @@ data = dict(
 total_epochs = 24
 
 load_from = 'http://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_caffe_fpn_1x_coco/faster_rcnn_r50_caffe_fpn_1x_coco_bbox_mAP-0.378_20200504_180032-c5925ee5.pth'
-work_dir = '/home/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_detection/mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu'
+work_dir = '/home/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_detection/calc/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm_albu-clahe32x32'
 # resume_from = '/home/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_mass/faster_rcnn_r50_caffe_fpn_mstrain_1x_ddsm/latest.pth'

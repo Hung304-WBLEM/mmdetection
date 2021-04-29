@@ -47,23 +47,17 @@ class Compose(object):
 
         ##################################
         # Save augmented image (my code) #
-        image = data['img']._data
-        # if type(image) is list:
-        #     image = image[0]
-        # image = transforms.ToPILImage()(image)
-        # image_plot = plt.imshow(image, cmap='gray')
-        image = image.permute(1, 2, 0).numpy()
+        # image = data['img']._data
+        # matplotlib_imshow(image, one_channel=True)
         
         
-        save_root = '/home/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_detection/visualize'
-        file_id = 0
-        while os.path.exists(os.path.join(save_root, f'img{file_id}.png')) is True:
-            file_id += 1
-            continue
-        # image.save(os.path.join(save_root, f'img{file_id}.png'))
+        # save_root = '/home/cougarnet.uh.edu/hqvo2/Projects/Breast_Cancer/experiments/cbis_ddsm_detection/visualize'
+        # file_id = 0
+        # while os.path.exists(os.path.join(save_root, f'img{file_id}.png')) is True:
+        #     file_id += 1
+        #     continue
         # plt.savefig(os.path.join(save_root, f'img{file_id}.png'))
         # plt.close()
-        cv2.imwrite(os.path.join(save_root, f'img{file_id}.png'), image)
         ##################################
 
         return data
